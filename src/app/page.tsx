@@ -245,9 +245,25 @@ async function CompaniesLayout() {
   //   .catch((err) => console.log({ err }));
   // const data = response?.data;
 
+  const headersList = headers();
+  const currentUrl = headersList.get("x-invoke-path");
+  const nexturl = headersList.get("x-forwarded-host");
+  // console.log("url>>", currentUrl);
+  const header_url = headersList.get("host");
+  const referer = headersList.get("referer");
+  const connection = headersList.get("connection");
+  const link = headersList.get("link");
+  const forwardedHost = headersList.get("x-forwarded-host");
   return (
     <div style={{ color: "black" }}>
       TEST
+      {currentUrl}
+      {nexturl}
+      {header_url}
+      {referer}
+      {connection}
+      {link}
+      {forwardedHost}
       {/* HELLO THIS IS DYNAMIC METADATA */}
     </div>
   );
