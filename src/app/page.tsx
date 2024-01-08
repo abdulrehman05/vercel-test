@@ -110,15 +110,15 @@ import { NextRequest, NextResponse } from "next/server";
 // });
 // or Dynamic metadata
 
-export function middleware(request: NextRequest) {
-  request.headers.set("pathname", request.nextUrl.pathname);
+// export function middleware(request: NextRequest) {
+//   request.headers.set("pathname", request.nextUrl.pathname);
 
-  if (request.nextUrl.pathname.startsWith("/@")) {
-    return NextResponse.rewrite(new URL("/profile", request.nextUrl), {
-      headers: request.headers,
-    });
-  }
-}
+//   if (request.nextUrl.pathname.startsWith("/@")) {
+//     return NextResponse.rewrite(new URL("/profile", request.nextUrl), {
+//       headers: request.headers,
+//     });
+//   }
+// }
 export async function generateMetadata() {
   // const host = getServerSideProps();
   const headersList = headers();
