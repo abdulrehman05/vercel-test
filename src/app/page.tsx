@@ -141,6 +141,14 @@ export async function generateMetadata() {
       nexturl +
       "forwardedHost:" +
       forwardedHost,
+    description: "Test description",
+    openGraph: {
+      images: [
+        {
+          url: "https://assets.turbologo.com/blog/en/2019/10/19084952/ferrari-logo-illustration.jpg",
+        },
+      ],
+    },
   };
 }
 //   // Split the host URL by "."
@@ -255,7 +263,7 @@ async function CompaniesLayout() {
   const link = headersList.get("link");
   const forwardedHost = headersList.get("x-forwarded-host");
   return (
-    <div style={{ color: "black" }}>
+    <div style={{ color: "white" }}>
       TEST
       {currentUrl}
       {nexturl}
